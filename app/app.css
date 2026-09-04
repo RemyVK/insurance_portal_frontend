@@ -1,15 +1,31 @@
-@import "tailwindcss";
+/*Global font */
+@import url('https://fonts.googleapis.com/css2?family=Scoutie+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
+/* CSS Variables used across the application */
+:root {
+  /* Colors */
+  --color-primary: #2563EB;
+  --color-primary-light: #DBEAFE;
+  --color-text: #111827;
+  --color-text-muted: #6B7280;
+  --color-background: #F9FAFB;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E7EB;
+  --color-success: #10B981;
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+  /* Spacing */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Shape */
+  --radius: 12px;
+
+  /* Effects */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  /* Typography */
+  --font-family: "Inter", sans-serif;
 }
