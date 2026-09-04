@@ -1,0 +1,9 @@
+.minMaxConatiner {
+    display: flex;
+    gap: 8px;
+
+    input {
+        width: 60px;
+        height: 36px;
+    }
+}

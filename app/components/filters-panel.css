@@ -1,0 +1,6 @@
+.filtersContainer {
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+    padding: 0 16px;
+    border: solid 1px var(--color-border);
+}

@@ -1,6 +1,6 @@
-import FiltersPanel from '~/components/filters-panel';
+import FiltersPanel from '../components/filters-panel';
 import './home-page.css';
-import OfferCrad from '~/components/offer-card';
+import OfferCard from '../components/offers/card';
 
 export default function HomePage() {
     return (
@@ -8,7 +8,7 @@ export default function HomePage() {
             <header><h1>InsureCompare</h1></header>
             <div className='content'>
                 <FiltersPanel />
-                <OfferCrad />
+                <OfferCard />
             </div>
         </>
 
