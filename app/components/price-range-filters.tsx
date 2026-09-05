@@ -3,7 +3,7 @@ import './price-range-filters.css';
 export default function PriceRangeFilters() {
     return (
         <>
-            <p>Price Range</p>
+            <p className='title'>Price Range</p>
             <p>Covered Price</p>
             <div className="minMaxConatiner">
                 <label htmlFor="priceMin"></label>
@@ -13,7 +13,7 @@ export default function PriceRangeFilters() {
                 <input type="number" placeholder="Max" id="priceMax" name="priceMax" max="99999" />
             </div>
 
-            <p>Monthly Due</p>
+            <p className='title'>Monthly Due</p>
             <p>Covered Premium</p>
             <div className="minMaxConatiner">
                 <label htmlFor="premiumMin"></label>
@@ -23,7 +23,7 @@ export default function PriceRangeFilters() {
                 <input type="number" placeholder="Max" id="premiumMax" name="premiumMax" max="99999" />
             </div>
 
-            <p>Duration (Months)</p>
+            <p className='title'>Duration (Months)</p>
             <p>Policy Duration</p>
             <div className="minMaxConatiner">
                 <label htmlFor="durationMin"></label>

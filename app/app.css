@@ -18,6 +18,16 @@ p {
   font-weight: 500;
 }
 
+button {
+  border-radius: var(--radius);
+  background-color: var(--color-primary);
+  border: solid 1px var(--color-border);
+  color: var(--color-surface);
+  width: 160px;
+  height: 40px;
+
+}
+
 /* CSS Variables used across the application */
 :root {
   /* Colors */

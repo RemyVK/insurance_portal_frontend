@@ -8,6 +8,7 @@ export default function FiltersPanel() {
             <p>Filters</p>
             <AllProviders />
             <PriceRangeFilters />
+            <button className='filterButton'>Apply Filters</button>
         </section>
     )
 }

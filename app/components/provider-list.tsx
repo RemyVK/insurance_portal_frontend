@@ -1,18 +1,31 @@
+import { useEffect } from 'react';
 import './provider-list.css';
+import { useAllProviders } from '../hooks/use-all-providers';
 
 export default function AllProviders() {
+    const { providers, loading, error } = useAllProviders();
+
+    if (loading) {
+        return <p>Loading</p>
+    }
+
+    if (error) {
+        return <p>Error: {error}</p>
+    }
+
     return (
         <>
-            <p>Providers</p>
             <p>Select your provider</p>
-            <input type="checkbox" id="provider1" name="provider1" value="Bike" />
-            <label htmlFor="provider1"> I have a bike</label><br />
+            {
+                providers.map(provider => (
+                    <div key={provider.id} className='providersList'>
+                        <input type='checkbox' id={provider.id} name={provider.name} value={provider.name} />
+                        <label htmlFor={provider.id}>{provider.name}</label>
+                        <br />
+                    </div>
 
-            <input type="checkbox" id="provider2" name="provider2" value="Car" />
-            <label htmlFor="provider2"> I have a car</label><br />
-
-            <input type="checkbox" id="provider3" name="provider3" value="Boat" />
-            <label htmlFor="provider3"> I have a boat</label><br />
+                ))
+            }
         </>
-    )
+    );
 }
