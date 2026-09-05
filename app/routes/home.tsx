@@ -1,7 +1,7 @@
 import HomePage from "../pages/home-page";
 import type { Route } from "./+types/home";
 
-export function meta({ }: Route.MetaArgs) {
+export function meta({}: Route.MetaArgs) {
   return [
     { title: "InsureCompare" },
     { name: "description", content: "Welcome to Insurance Comparison Portal!" },

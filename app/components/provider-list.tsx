@@ -2,6 +2,7 @@ import './provider-list.css';
 import { ALL_PROVIDERS_API } from '../constants';
 import { useAllProviders } from '../hooks/use-all-providers';
 
+
 export default function AllProviders() {
     const { data: providers, loading, error } = useAllProviders(ALL_PROVIDERS_API);
 
