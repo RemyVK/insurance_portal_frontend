@@ -10,6 +10,8 @@ export default function OfferCard() {
 
     const { offers, loading, error } = useAllOffer(ALL_OFFERS_API);
 
+    console.log('offers', offers);
+
     if (loading) {
         return <p>Loading</p>
     }
@@ -21,28 +23,40 @@ export default function OfferCard() {
     return (
         <div className="infoContainer">
             <input id="searchBar" type="text" placeholder="Search for any Provider or Insurance" />
-            <section className="offerContainer">
-                <div className="offerDetails">
-                    {offers.map((offer) => (
-                        <div key={offer.id}>
-                            <div>
-                                <p>{offer.name}</p>
-                                <div className="miniDetailsContainer">
-                                    <div className="miniDetails">
-                                        <p>Provided By</p>
-                                        <p>{offer.ProviderName}</p>
-                                    </div>
-                                </div>
+            {offers.map((offer) => (
+                <section className="offerContainer">
+                    <div className="offerDetails">
+                        <p>{offer.name}</p>
+                        <div className="miniDetailsContainer">
+                            <div className="miniDetails">
+                                <p>Provided By</p>
+                                <p>{offer.ProviderName}</p>
                             </div>
-                            <div className="offerCostActionDeatil">
-                                <p>Total Amount Covered</p>
-                                <p>99999</p>
-                                <button onClick={() => handleOfferCTA(offer.link)}>View Offer</button>
+                            <div className="miniDetails">
+                                <p>Insurance Tye</p>
+                                <p>{offer.InsuranceType}</p>
+                            </div>
+                            <div className="miniDetails">
+                                <p>Duration</p>
+                                <p>{offer.duration} </p>
+                            </div>
+                            <div className="miniDetails">
+                                <p>Monthly Amount</p>
+                                <p>{offer.monthly_payment}</p>
                             </div>
                         </div>
-                    ))}
-                </div>
-            </section >
+                    </div>
+                    <div className="offerCostActionDeatil">
+                        <p>Total Amount Covered</p>
+                        <p>{offer.total_covered_amount}</p>
+
+                        <button onClick={() => handleOfferCTA(offer.link)}>View Offer</button>
+
+                    </div>
+
+                </section>
+
+            ))}
         </div >
     );
 }
