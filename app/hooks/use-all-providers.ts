@@ -6,23 +6,23 @@ interface Provider {
     name: string;
 }
 
-//Returns a list of all Insurance providers
-export function useAllProviders() {
-    const [providers, setProviders] = useState<Provider[]>([]);
+//Make an API call to the respective URL
+export function useAllProviders(url: string) {
+    const [data, setData] = useState<Provider[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         setLoading(true);
-        fetch('http://127.0.0.1:8000/all-providers')
+        fetch(url)
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 return response.json();
             })
-            .then((data) => setProviders(data.data))
+            .then((data) => setData(data.data))
             .catch((err) => setError(err.message))
             .finally(() => setLoading(false));
     }, []);
 
-    return { providers, loading, error };
+    return { data, loading, error };
 }

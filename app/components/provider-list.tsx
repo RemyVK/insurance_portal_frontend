@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
 import './provider-list.css';
+import { ALL_PROVIDERS_API } from '../constants';
 import { useAllProviders } from '../hooks/use-all-providers';
 
 export default function AllProviders() {
-    const { providers, loading, error } = useAllProviders();
+    const { data: providers, loading, error } = useAllProviders(ALL_PROVIDERS_API);
 
     if (loading) {
         return <p>Loading</p>
